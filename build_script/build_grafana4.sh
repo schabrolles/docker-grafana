@@ -18,8 +18,10 @@ go get github.com/grafana/grafana
 
 export PATH=$PATH:$GOPATH/bin
 cd $GOPATH/src/github.com/grafana/grafana
-git checkout v4.0.2
-go run build.go setup    
+if [ ! -z $1 ]; then
+    git checkout $1
+fi
+go run build.go setup
 godep restore
 #go build .
 go run build.go build
