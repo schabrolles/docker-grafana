@@ -5,7 +5,7 @@
 
 apt-get update && apt-get -y upgrade
 
-apt-get install -y git golang wget phantomjs xvfb
+apt-get install -y git golang curl phantomjs xvfb
 
 curl -sL https://nodejs.org/dist/v6.9.4/node-v6.9.4-linux-ppc64le.tar.xz | tar Jxvf - -C /usr --strip 1
 
