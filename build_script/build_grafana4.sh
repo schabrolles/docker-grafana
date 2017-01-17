@@ -5,9 +5,11 @@
 
 apt-get update && apt-get -y upgrade
 
-apt-get install -y git golang nodejs-legacy npm phantomjs xvfb
+apt-get install -y git golang wget phantomjs xvfb
 
-npm install -g grunt-cli
+curl -sL https://nodejs.org/dist/v6.9.4/node-v6.9.4-linux-ppc64le.tar.xz | tar Jxvf - -C /usr --strip 1
+
+npm install -g grunt grunt-cli yarn
 
 Xvfb :0 -screen 0 1024x768x24 &
 export DISPLAY=:0
@@ -22,6 +24,8 @@ if [ ! -z $1 ]; then
     git checkout $1
 fi
 
+echo
+echo "Building Grafana Backend"
 ##Building Backend
 go run build.go setup
 #godep restore
@@ -29,8 +33,9 @@ go run build.go setup
 go run build.go build
 #go run build.go build package --force
 
+echo
+echo "Building Grafana Frontend"
 ##Building frontend assets
-npm install -g yarn
 yarn install --pure-lockfile
 npm run build
 
