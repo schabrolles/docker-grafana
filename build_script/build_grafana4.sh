@@ -37,6 +37,7 @@ echo
 echo "Building Grafana Frontend"
 ##Building frontend assets
 yarn install --pure-lockfile
+npm rebuild node-sass
 npm run build
 
 #npm install
