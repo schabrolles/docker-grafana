@@ -22,7 +22,7 @@ cd build_script/
 ./build_grafana4.sh v4.1.0
 ```
 `./build_grafana4.sh. [grafana git_tag]`
-replace `grafana git_tag` with the version you want. This parameter is optional, but if empty, it will build the latest version of grafana available ... it could be a **dev version**. If you want to build a specific version use a tag (from grafana git) as parameter of `build_grafana4.sh`
+replace `grafana git_tag` with the version you want. This parameter is optional, but if empty, it will build the latest version of grafana available ... it could be a **dev version**. If you want to build a specific version use a tag (from grafana git or check directly [here](https://github.com/grafana/grafana/releases)) as parameter of `build_grafana4.sh`
 
 Wait until the build process finished (be patient, it is a bit long).
 
