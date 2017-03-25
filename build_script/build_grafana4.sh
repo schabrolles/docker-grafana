@@ -5,11 +5,13 @@
 
 apt-get update && apt-get -y upgrade
 
-apt-get install -y git golang curl python phantomjs xvfb
+#apt-get install -y git golang curl python phantomjs xvfb
+apt-get install -y git curl python phantomjs xvfb
 
 curl -sL https://nodejs.org/dist/v6.9.4/node-v6.9.4-linux-ppc64le.tar.xz | tar Jxvf - -C /usr --strip 1
+curl -sL https://storage.googleapis.com/golang/go1.8.linux-ppc64le.tar.gz | tar Jxvf - -C /
 
-mkdir /go
+#mkdir /go
 export GOPATH=/go
 go get github.com/grafana/grafana
 
