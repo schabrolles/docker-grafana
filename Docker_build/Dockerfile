@@ -5,8 +5,8 @@ RUN apt-get update \
 && apt-get install -y libgo7 xvfb ca-certificates phantomjs\
 && rm -rf /var/lib/apt/lists/*
 
-COPY ./grafana4_opt.tar.gz /grafana4_opt.tar.gz
-RUN tar xvf grafana4_opt.tar.gz
+COPY ./grafana_opt.tar.gz /grafana_opt.tar.gz
+RUN tar xvf grafana_opt.tar.gz
 
 RUN cp /opt/grafana/conf/defaults.ini /opt/grafana/conf/defaults.ini.orig
 COPY ./defaults.ini /opt/grafana/conf/defaults.ini
