@@ -35,7 +35,7 @@ npm install phantomjs-prebuilt
 npm install -g yarn
 npm install -g grunt grunt-cli
 
-#make all
+make all
 
 #yarn install --pure-lockfile
 #grunt
