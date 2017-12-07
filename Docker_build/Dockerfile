@@ -1,4 +1,4 @@
-FROM schabrolles/ubuntu_ppc64le:16.04
+FROM ppc64le/ubuntu
 MAINTAINER s.chabrolles@fr.ibm.com
 
 RUN apt-get update \

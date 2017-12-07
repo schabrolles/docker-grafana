@@ -15,7 +15,7 @@ fi
 
 mkdir -p opt/grafana
 
-docker run --rm --hostname grafana_build -ti -p 80:80 -v $PWD/opt:/opt -v $PWD/build_script:/build_script --name grafana_build schabrolles/ubuntu_ppc64le:17.04pre /build_script/build_grafana.sh $GIT_TAG
+docker run --rm --hostname grafana_build -ti -p 80:80 -v $PWD/opt:/opt -v $PWD/build_script:/build_script --name grafana_build ppc64le/ubuntu /build_script/build_grafana.sh $GIT_TAG
 
 [ -f opt/grafana/bin/grafana-server ] && tar zcvf Docker_build/grafana_opt.tar.gz opt || (echo BUILD FAILED && exit 1)
 
