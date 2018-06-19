@@ -10,11 +10,11 @@
 ```
 docker run -d -p 3000:3000 grafana/grafana
 ```
-Grafana container with persistent storage (recommended)
 
-## create a persistent volume for your data in /var/lib/grafana (database and plugins)
+## Grafana container with persistent storage (recommended)
 
 ```
+# create a persistent volume for your data in /var/lib/grafana (database and plugins)
 docker volume create grafana-storage
 
 # start grafana
