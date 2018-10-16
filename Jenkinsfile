@@ -5,8 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building ...'
-                sh 'uname -a'
-                sh 'docker ps -a'
+                docker build -t schabrolles/grafana_ppc64le:latest .
             }
         }
         stage('Test') {
