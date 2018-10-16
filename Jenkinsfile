@@ -1,11 +1,13 @@
 pipeline {
-    agent any
+    agent {
+        dockerfile true
+    }
 
     stages {
         stage('Build') {
             steps {
                 echo 'Building ...'
-                sh 'docker build -t schabrolles/grafana_ppc64le:latest .'
+                // sh 'docker build -t schabrolles/grafana_ppc64le:latest .'
             }
         }
         stage('Test') {
