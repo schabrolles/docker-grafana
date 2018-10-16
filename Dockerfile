@@ -7,7 +7,7 @@ ENV PATH=$PATH:$GOROOT/bin
 ENV GOPATH=/go
 
 RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list && \
-    apt-get update && apt-get install -y git build-essential curl python xvfb phantomjs
+    apt-get update ; apt-get install -y git build-essential curl python xvfb phantomjs
 
 RUN Xvfb :0 -screen 0 1024x768x24 &
 ENV DISPLAY=:0
