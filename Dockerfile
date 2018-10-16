@@ -1,7 +1,9 @@
 FROM node:8.11.3 AS compiler
 
-ENV GRAFANA_VERSION=v5.1.3
-ENV GO_VERSION=1.9.2
+# ENV GRAFANA_VERSION=v5.1.3
+# ENV GO_VERSION=1.9.2
+ARG GRAFANA_VERSION
+ARG GO_VERSION
 ENV GOROOT=/usr/local/go
 ENV PATH=$PATH:$GOROOT/bin
 ENV GOPATH=/go
@@ -18,7 +20,7 @@ RUN mkdir -p $GOPATH && \
     go get github.com/grafana/grafana || true
 
 WORKDIR $GOPATH/src/github.com/grafana/grafana
-RUN git checkout $GRAFANA_VERSION 
+RUN git checkout v$GRAFANA_VERSION 
 
 COPY start_xvfb.sh /start_xvfb.sh
 
