@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building ...'
                 sh 'uname -a'
-                // sh 'docker ps -a'
+                sh 'docker ps -a'
             }
         }
         stage('Test') {
